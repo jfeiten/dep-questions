@@ -39,7 +39,7 @@ export class FormSession1 extends Component {
                 <p />
 
                 {
-                    content.filter((x,i) => [0, 1, 2].includes(i)).map((q) => (
+                    content.filter((x,i) => [1, 2, 3].includes(i)).map((q) => (
                 <div>
                 <p />
                 <Question question={q.question} options={q.options} />

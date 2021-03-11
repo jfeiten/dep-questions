@@ -22,7 +22,7 @@ export class FormSession2 extends Component {
         return (
             <React.Fragment>
                 {
-                    content.filter((x,i) => [3, 4, 5].includes(i)).map((q) => (
+                    content.filter((x,i) => [4, 5, 0].includes(i)).map((q) => (
                 <div>
                 <p />
                 <Question question={q.question} options={q.options} />

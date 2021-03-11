@@ -20,7 +20,7 @@ export class Confirm extends Component {
 
         return (
             <React.Fragment>
-                <p /> Agradecemos sua participação! <p />
+                <p /> Thank you for participating. <p />
                 
                 <Button
                 variant="contained"

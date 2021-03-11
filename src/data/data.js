@@ -1,30 +1,29 @@
 const content = [
     {
-        question: 'Você foi testado para ver se estava infectado com o coronavírus?',
-        options: [{ value: 1, label: 'Não' }, { value: 2, label: 'Sim' }, 
-        {value: 3, label: 'Sim, resultado negativo.'}, {value: 4, label: 'Sim, resultado positivo.'}]
+        question: 'Have you ever tested for coronavírus?',
+        options: [{ value: 1, label: 'No' }, { value: 2, label: 'Yes' }, 
+        {value: 3, label: 'Yes, negative result.'}, {value: 4, label: 'Yes, positive result.'}]
     },
     {
-        question: 'Você tem dores de cabeça frequentemente? ',
-        options: [{ value: 1, label: 'Não' }, { value: 2, label: 'Sim' }]
+        question: 'Do you often have headaches',
+        options: [{ value: 1, label: 'No' }, { value: 2, label: 'Sim' }]
     },
     {
-        question: 'Tem falta de apetite?',
-        options: [{ value: 1, label: 'Não' }, { value: 2, label: 'Sim' }]
+        question: 'Is your appetite poor?',
+        options: [{ value: 1, label: 'No' }, { value: 2, label: 'Sim' }]
     },
     {
-        question: 'Dorme mal?',
-        options: [{ value: 1, label: 'Sim' }, { value: 2, label: 'Com certeza' }]
+        question: 'Do you sleep badly?',
+        options: [{ value: 1, label: 'No' }, { value: 2, label: 'Yes' }]
     },
     {
-        question: 'Assusta-se com facilidade?',
-        options: [{ value: 1, label: 'Não' }, { value: 2, label: 'Sim' }]
+        question: 'Are you easily frightened?',
+        options: [{ value: 1, label: 'No' }, { value: 2, label: 'Yes' }]
     },
     {
-        question: 'Tem tremores nas mãos?',
-        options: [{ value: 1, label: 'Não' }, { value: 2, label: 'Sim' }]
+        question: 'Do your hands shake?',
+        options: [{ value: 1, label: 'No' }, { value: 2, label: 'Yes' }]
     }
 ];
 
 export default content;
-

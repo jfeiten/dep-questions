@@ -22,7 +22,7 @@ export class Welcome extends Component {
         return (
             <div>
 
-            <h1>Seja bem-vindo(a)!</h1>
+            <h1>Welcome</h1>
 
             <Button
                 variant="contained"

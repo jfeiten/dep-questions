@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <AppBar position='static'>
         <Toolbar> 
-        <Typography> Questionário de sintomas depressivos </Typography>
+        <Typography> Mental suffering questionnaire </Typography>
         </Toolbar>
         </AppBar>
     )
