@@ -7,19 +7,32 @@ import FormLabel from '@material-ui/core/FormLabel';
 
 // add  onChange={handleChange} in RadioGroup
 
-const Question = (props) => (
-    <FormControl component="fieldset">
-        <FormLabel component="legend">{props.question}</FormLabel>
-        <RadioGroup aria-label="animal" name="animal1">
-            {
-                props.options.map((option) => (
+class Question extends Component {
 
-                    <FormControlLabel value={option.value} control={<Radio required={true} />} label={option.label} />
+    render() {
 
-                ))
-            }
-        </RadioGroup>
-    </FormControl>
-)
+        const values = this.props.values;
+
+        return (
+            <div>
+                <FormControl component="fieldset">
+                    <FormLabel component="legend">{this.props.question}</FormLabel>
+                    <RadioGroup aria-label="animal" name="animal1" onChange={this.props.handleChange} value={this.props.initial_value}>
+                        {
+                            this.props.options.map((option) => (
+
+                                <FormControlLabel value={option.value}
+                                    control={<Radio required={true} />}
+                                    label={option.label}
+                                />
+
+                            ))
+                        }
+                    </RadioGroup>
+                </FormControl>
+            </div>
+        );
+    }
+}
 
 export default Question;

@@ -25,7 +25,7 @@ export class FormSession2 extends Component {
                     content.filter((x,i) => [4, 5, 0].includes(i)).map((q) => (
                 <div>
                 <p />
-                <Question question={q.question} options={q.options} />
+                <Question question={q.question} options={q.options}/>
                 <br />
                 <p />
 

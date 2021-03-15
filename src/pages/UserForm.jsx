@@ -6,16 +6,9 @@ import Welcome from './Welcome.component'
 
 export default class UserForm extends Component {
     state = {
-        id: this.props.id,
-        token: this.props.token,
         step: 1,
-        email: '',
-        q1: '',
-        q2: '',
-        q3: '',
-        q4: '',
-        q5: '',
-        q6: ''
+        email: 'nenhum',
+        questions: [2, 2, 2, 2, 2]
     }
 
     // Proceed to next step
@@ -34,31 +27,32 @@ export default class UserForm extends Component {
     }
 
     handleChange = input => e => {
-        this.setState({[input]: e.target.value});
-    }
-
+        this.setState({[input]: Number(e.target.value) });
+        console.log('input:', input, Number(e.target.value));
+        console.log(this.state);
+    };
 
     render() {
         const { step } = this.state;
-        const { q1, q2, q3, q4, q5, q6 } = this.state;
-        const values = { q1, q2, q3, q4, q5, q6 };
+        const { email, questions } = this.state;
+        const current_values = { email, questions };
 
         switch(step) {
             case 1:
                 return(
-                    <Welcome nextStep={this.nextStep} id={this.props.id} />   
+                    <Welcome nextStep={this.nextStep} values = {current_values}/>   
                 )
             case 2:
                 return(
-                    <FormSession1 nextStep={this.nextStep} prevStep={this.prevStep} handleChange={this.handleChange} values={values} /> 
+                    <FormSession1 nextStep={this.nextStep} prevStep={this.prevStep} values={current_values} handleChange = {this.handleChange}/> 
                 )
             case 3:
                 return (
-                    <FormSession2 nextStep={this.nextStep} prevStep={this.prevStep} handleChange={this.handleChange} values={values} />
+                    <FormSession2 nextStep={this.nextStep} prevStep={this.prevStep} />
                 )
             case 4:
                 return (
-                    <Confirm nextStep={this.nextStep} prevStep={this.prevStep} values={values} />
+                    <Confirm nextStep={this.nextStep} prevStep={this.prevStep} />
                 )
         }
    

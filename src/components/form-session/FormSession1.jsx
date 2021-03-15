@@ -17,11 +17,10 @@ export class FormSession1 extends Component {
         this.props.prevStep();
     };
 
-
-
     render() {
-        const { values, handleChange } = this.props;
-        console.log(content[1].question)
+        console.log(this.state);
+        const values = this.props.values;
+        console.log(content[1].question);
 
         return (
             <React.Fragment>
@@ -38,19 +37,24 @@ export class FormSession1 extends Component {
                 <br />
                 <p />
 
-                {
-                    content.filter((x,i) => [1, 2, 3].includes(i)).map((q) => (
-                <div>
-                <p />
-                <Question question={q.question} options={q.options} />
-                <br />
-                <p />
 
-                </div>
-                
+                {
+                    content.filter((x, i) => [1, 2, 3].includes(i)).map((q) => (
+                        <div>
+                            <p />
+                            <Question question={q.question}
+                                options={q.options}
+                                initial_value={values}
+                                handleChange={this.props.handleChange} />
+                            <br />
+                            <p />
+
+                        </div>
+
                     ))
                 }
                
+                
                 <NextPrevButtons back={this.back} continue={this.continue} />
 
             </React.Fragment>
