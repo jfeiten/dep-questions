@@ -12,12 +12,14 @@ class Question extends Component {
     render() {
 
         const values = this.props.values;
+        const { s } = this.props;
+        const { n } = this.props;
 
         return (
             <div>
                 <FormControl component="fieldset">
                     <FormLabel component="legend">{this.props.question}</FormLabel>
-                    <RadioGroup aria-label="animal" name="animal1" onChange={this.props.handleChange} value={this.props.initial_value}>
+                    <RadioGroup aria-label="animal" name="animal1" onChange={this.props.handleChange(s, n)} value={this.props.initial_value}>
                         {
                             this.props.options.map((option) => (
 

@@ -18,9 +18,8 @@ export class FormSession1 extends Component {
     };
 
     render() {
-        console.log(this.state);
-        const values = this.props.values;
-        console.log(content[1].question);
+        
+        const { values, handleChange } = this.props;
 
         return (
             <React.Fragment>
@@ -39,12 +38,14 @@ export class FormSession1 extends Component {
 
 
                 {
-                    content.filter((x, i) => [1, 2, 3].includes(i)).map((q) => (
+                    content.filter((x, i) => [0, 1, 2].includes(i)).map((q, i) => (
                         <div>
                             <p />
                             <Question question={q.question}
                                 options={q.options}
-                                initial_value={values}
+                                initial_value={values.questions.s1[i]}
+                                s='s1'
+                                n={i}
                                 handleChange={this.props.handleChange} />
                             <br />
                             <p />

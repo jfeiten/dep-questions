@@ -21,19 +21,25 @@ export class FormSession2 extends Component {
 
         return (
             <React.Fragment>
-                {
-                    content.filter((x,i) => [4, 5, 0].includes(i)).map((q) => (
-                <div>
-                <p />
-                <Question question={q.question} options={q.options}/>
-                <br />
-                <p />
+           
+            {
+                content.filter((x, i) => [3, 4, 5].includes(i)).map((q, i) => (
+                    <div>
+                        <p />
+                        <Question question={q.question}
+                            options={q.options}
+                            initial_value={values.questions.s2[i]}
+                            s='s2'
+                            n={i}
+                            handleChange={this.props.handleChange} />
+                        <br />
+                        <p />
 
-                </div>
-                
-                    ))
-                }
+                    </div>
 
+                ))
+            }
+           
             <NextPrevButtons back={this.back} continue = {this.continue} />
             
             </React.Fragment>

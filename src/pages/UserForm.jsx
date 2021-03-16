@@ -8,7 +8,10 @@ export default class UserForm extends Component {
     state = {
         step: 1,
         email: 'nenhum',
-        questions: [2, 2, 2, 2, 2]
+        questions: {
+            s1: [0, 0, 0], 
+            s2: [0, 0, 0]
+        }
     }
 
     // Proceed to next step
@@ -26,16 +29,19 @@ export default class UserForm extends Component {
         });
     }
 
-    handleChange = input => e => {
-        this.setState({[input]: Number(e.target.value) });
-        console.log('input:', input, Number(e.target.value));
-        console.log(this.state);
+    handleChange = (session, i) => e => {
+        const new_state = this.state.questions;
+        new_state[session][i] = Number(e.target.value);
+        
+        this.setState({
+            questions: new_state
+        });
     };
 
     render() {
         const { step } = this.state;
         const { email, questions } = this.state;
-        const current_values = { email, questions };
+        const current_values = { step, email, questions };
 
         switch(step) {
             case 1:
@@ -48,7 +54,7 @@ export default class UserForm extends Component {
                 )
             case 3:
                 return (
-                    <FormSession2 nextStep={this.nextStep} prevStep={this.prevStep} />
+                    <FormSession2 nextStep={this.nextStep} prevStep={this.prevStep} values={current_values} handleChange = {this.handleChange}/>
                 )
             case 4:
                 return (
